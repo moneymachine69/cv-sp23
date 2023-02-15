@@ -10,6 +10,7 @@ let sketch = function (p) {
 
   p.draw = function () {
     p.clear(0);
+    p.background(0);
 
     if (detections != undefined) {
       if (detections.multiFaceLandmarks != undefined) {
@@ -21,13 +22,15 @@ let sketch = function (p) {
 
   p.drawFaceMeshes = function () {
     p.strokeWeight(2);
-    p.stroke(0, 255, 255);
+    p.stroke(0, 255, 0);
 
     for (let i = 0; i < detections.multiFaceLandmarks.length; i++) {
       for (let j = 0; j < detections.multiFaceLandmarks[i].length; j++) {
 
-        const x = p.width - detections.multiFaceLandmarks[i][j].x * p.width;
-        const y = detections.multiFaceLandmarks[i][j].y * p.height;
+        const currentFace = detections.multiFaceLandmarks[i];
+
+        const x = p.width - currentFace[j].x * p.width;
+        const y = currentFace[j].y * p.height;
 
         p.point(x, y);
 
