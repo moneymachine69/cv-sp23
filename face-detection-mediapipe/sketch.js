@@ -91,9 +91,11 @@ let sketch = function(p) {
           //     capture.pixels[index+2] = 255-b;
           // }
           if((xmin < x) && (x < xmax) && (ymin < y) && (y < ymax)) {
+            if((x%5 != 0) && (y%5 != 0)){
             capture.pixels[index] = 255-r;
             capture.pixels[index+1] = 255-g;
             capture.pixels[index+2] = 255-b;
+            }
         }
           
       }
