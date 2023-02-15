@@ -10,7 +10,7 @@ let sketch = function (p) {
 
   p.draw = function () {
     p.clear(0);
-    p.background(0);
+    //p.background(0,0,0);
 
     if (detections != undefined) {
       if (detections.multiFaceLandmarks != undefined) {
